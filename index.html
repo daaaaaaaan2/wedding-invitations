@@ -273,7 +273,28 @@
             background: #ddd;
             margin: 0 auto 20px;
         }
+.lace-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 280px;
+            height: auto;
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+        }
 
+        .header {
+            position: relative;
+        }
+
+        .names-container,
+        .date {
+            position: relative;
+            z-index: 1;
+        }
+        
         /* Responsive */
         @media (max-width: 480px) {
             .header {
@@ -300,8 +321,9 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
+<!-- Header -->
         <div class="header">
+            <img src="764ac25286aca4b29e533eaaee825558.jpg" class="lace-image" alt="lace decoration">
             <div class="names-container">
                 <div class="groom">사공일</div>
                 <span class="divider"></span>
