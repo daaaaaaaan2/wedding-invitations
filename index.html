@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사공일 & 정다은 | 결혼식 초대장</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            padding: 80px 40px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: auto;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60'%3E%3Cdefs%3E%3ClinearGradient id='fade' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' style='stop-color:%23ccc;stop-opacity:0' /%3E%3Cstop offset='25%25' style='stop-color:%23999;stop-opacity:1' /%3E%3Cstop offset='75%25' style='stop-color:%23999;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ccc;stop-opacity:0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cg stroke='url(%23fade)' stroke-width='0.8' fill='none' opacity='0.6'%3E%3Cpath d='M20,15 Q30,5 40,15 T60,15 T80,15 T100,15 T120,15 T140,15 T160,15 T180,15 T200,15 T220,15 T240,15 T260,15 T280,15 T300,15 T320,15 T340,15 T360,15 T380,15' /%3E%3Cpath d='M20,30 Q30,20 40,30 T60,30 T80,30 T100,30 T120,30 T140,30 T160,30 T180,30 T200,30 T220,30 T240,30 T260,30 T280,30 T300,30 T320,30 T340,30 T360,30 T380,30' /%3E%3Cpath d='M20,45 Q30,35 40,45 T60,45 T80,45 T100,45 T120,45 T140,45 T160,45 T180,45 T200,45 T220,45 T240,45 T260,45 T280,45 T300,45 T320,45 T340,45 T360,45 T380,45' /%3E%3C/g%3E%3C/svg%3E") no-repeat center;
+            background-size: contain;
+            height: 60px;
+        }
+
+        .groom, .bride {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin: 20px 0;
+        }
+
+        .groom {
+            color: #666;
+        }
+
+        .bride {
+            color: #666;
+        }
+
+        .divider {
+            display: inline-block;
+            width: 1px;
+            height: 20px;
+            background: #ccc;
+            margin: 0 15px;
+            vertical-align: middle;
+        }
+
+        .names-container {
+            margin: 40px 0;
+        }
+
+        .date {
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin: 40px 0;
+            color: #000;
+        }
+
+        .date-sub {
+            font-size: 13px;
+            color: #999;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 60px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60'%3E%3Cdefs%3E%3ClinearGradient id='fade2' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' style='stop-color:%23ccc;stop-opacity:0' /%3E%3Cstop offset='25%25' style='stop-color:%23999;stop-opacity:1' /%3E%3Cstop offset='75%25' style='stop-color:%23999;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ccc;stop-opacity:0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cg stroke='url(%23fade2)' stroke-width='0.8' fill='none' opacity='0.6'%3E%3Cpath d='M20,45 Q30,35 40,45 T60,45 T80,45 T100,45 T120,45 T140,45 T160,45 T180,45 T200,45 T220,45 T240,45 T260,45 T280,45 T300,45 T320,45 T340,45 T360,45 T380,45' /%3E%3Cpath d='M20,30 Q30,20 40,30 T60,30 T80,30 T100,30 T120,30 T140,30 T160,30 T180,30 T200,30 T220,30 T240,30 T260,30 T280,30 T300,30 T320,30 T340,30 T360,30 T380,30' /%3E%3Cpath d='M20,15 Q30,5 40,15 T60,15 T80,15 T100,15 T120,15 T140,15 T160,15 T180,15 T200,15 T220,15 T240,15 T260,15 T280,15 T300,15 T320,15 T340,15 T360,15 T380,15' /%3E%3C/g%3E%3C/svg%3E") no-repeat center;
+            background-size: contain;
+        }
+
+        /* Greeting Section */
+        .greeting {
+            padding: 60px 40px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .greeting-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #666;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* Info Section */
+        .info-section {
+            padding: 60px 40px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .info-title {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .info-item {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: #999;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .info-content {
+            font-size: 15px;
+            color: #333;
+            font-weight: 400;
+        }
+
+        .time {
+            font-size: 16px;
+            font-weight: 500;
+            color: #000;
+            margin: 5px 0;
+        }
+
+        .venue {
+            font-size: 14px;
+            color: #555;
+            margin-top: 15px;
+        }
+
+        .venue-detail {
+            font-size: 13px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 60px 40px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+            border: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            border-radius: 2px;
+            margin-bottom: 20px;
+        }
+
+        /* RSVP Section */
+        .rsvp {
+            padding: 60px 40px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .rsvp-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 12px;
+            color: #999;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            font-size: 14px;
+            font-family: inherit;
+            color: #333;
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #999;
+        }
+
+        .submit-btn {
+            padding: 14px;
+            background: #000;
+            color: #fff;
+            border: none;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: 500;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .submit-btn:hover {
+            background: #333;
+        }
+
+        .submit-btn:active {
+            background: #000;
+            transform: scale(0.98);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 40px;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-line {
+            width: 30px;
+            height: 1px;
+            background: #ddd;
+            margin: 0 auto 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .header {
+                padding: 60px 30px;
+            }
+
+            .info-section,
+            .greeting,
+            .gallery,
+            .rsvp,
+            .footer {
+                padding: 50px 30px;
+            }
+
+            .date {
+                font-size: 24px;
+            }
+
+            .gallery-placeholder {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="names-container">
+                <div class="groom">사공일</div>
+                <span class="divider"></span>
+                <div class="bride">정다은</div>
+            </div>
+            <div class="date">
+                2027.09.21
+                <div class="date-sub">Tuesday</div>
+            </div>
+        </div>
+
+        <!-- Greeting -->
+        <div class="greeting">
+            <p class="greeting-text">
+                저희 두 사람이 인생에서 가장 아름다운 순간을<br>
+                함께 나누고 싶습니다.<br><br>
+                바쁘시겠지만 오셔서<br>
+                저희의 행복한 날을 축복해 주세요.
+            </p>
+        </div>
+
+        <!-- Info Section -->
+        <div class="info-section">
+            <div class="info-title">When & Where</div>
+            
+            <div class="info-item">
+                <div class="info-label">Date</div>
+                <div class="time">2027년 9월 21일 (화요일)</div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-label">Time</div>
+                <div class="time">오후 3시</div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-label">Venue</div>
+                <div class="venue">예식장 이름</div>
+                <div class="venue-detail">주소</div>
+            </div>
+        </div>
+
+        <!-- Gallery -->
+        <div class="gallery">
+            <div class="info-title">Gallery</div>
+            <div class="gallery-placeholder">
+                사진 영역 (이미지 추가 예정)
+            </div>
+        </div>
+
+        <!-- RSVP -->
+        <div class="rsvp">
+            <div class="info-title">RSVP</div>
+            <form class="rsvp-form">
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" placeholder="이름을 입력하세요" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">연락처</label>
+                    <input type="tel" id="phone" placeholder="010-0000-0000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="attendance">참석 여부</label>
+                    <select id="attendance" required>
+                        <option value="">선택하세요</option>
+                        <option value="yes">참석</option>
+                        <option value="no">불참</option>
+                        <option value="maybe">미정</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">동반 인원</label>
+                    <input type="number" id="guests" placeholder="명" min="1" max="5" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">축하 메시지</label>
+                    <input type="text" id="message" placeholder="축하 메시지를 남겨주세요">
+                </div>
+
+                <button type="submit" class="submit-btn">응답 보내기</button>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-line"></div>
+            <p>Thank you for celebrating with us</p>
+        </div>
+    </div>
+</body>
+</html>
